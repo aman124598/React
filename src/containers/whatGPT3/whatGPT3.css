@@ -1,6 +1,195 @@
-img{
-display: block;
-margin-left: auto;
-margin-right: auto;
-margin-bottom: -40px;
+/* WhatGPT3 Section */
+.whatgpt3 {
+  padding: 6rem 4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 4rem;
+}
+
+.whatgpt3-feature {
+  flex: 1;
+  max-width: 400px;
+}
+
+.whatgpt3-feature h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.whatgpt3-feature-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.whatgpt3-feature-item .gradient-bar {
+  width: 40px;
+  height: 3px;
+  background: var(--gradient-bar);
+  border-radius: 2px;
+}
+
+.whatgpt3-feature-item h3 {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.whatgpt3-feature-item p {
+  color: var(--color-text);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Heading Section */
+.whatgpt3-heading {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.whatgpt3-heading h1 {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.3;
+  max-width: 500px;
+}
+
+.whatgpt3-heading p {
+  color: var(--color-subtext);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.whatgpt3-heading p:hover {
+  gap: 0.75rem;
+}
+
+.whatgpt3-heading p::after {
+  content: '→';
+  transition: transform var(--transition-normal);
+}
+
+.whatgpt3-heading p:hover::after {
+  transform: translateX(3px);
+}
+
+/* Features Container */
+.whatgpt3-container {
+  flex: 1.5;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.whatgpt3-container-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background: linear-gradient(145deg, rgba(4, 44, 84, 0.4) 0%, rgba(4, 12, 24, 0.6) 100%);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(174, 103, 250, 0.1);
+  transition: all var(--transition-normal);
+}
+
+.whatgpt3-container-item:hover {
+  border-color: rgba(174, 103, 250, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.whatgpt3-container-item .gradient-bar {
+  width: 40px;
+  height: 3px;
+  background: var(--gradient-bar);
+  border-radius: 2px;
+}
+
+.whatgpt3-container-item h3 {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.whatgpt3-container-item p {
+  color: var(--color-text);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1200px) {
+  .whatgpt3 {
+    padding: 4rem 3rem;
+    gap: 3rem;
+  }
+  
+  .whatgpt3-container {
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .whatgpt3 {
+    flex-direction: column;
+    padding: 4rem 2rem;
+    gap: 3rem;
+  }
+  
+  .whatgpt3-feature {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  .whatgpt3-feature h1 {
+    grid-column: span 2;
+  }
+  
+  .whatgpt3-heading {
+    max-width: 100%;
+  }
+  
+  .whatgpt3-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .whatgpt3 {
+    padding: 3rem 1.5rem;
+  }
+  
+  .whatgpt3-feature {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .whatgpt3-feature h1 {
+    grid-column: span 1;
+  }
+  
+  .whatgpt3-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .whatgpt3 {
+    padding: 2rem 1rem;
+  }
+  
+  .whatgpt3-container-item {
+    padding: 1.25rem;
+  }
 }

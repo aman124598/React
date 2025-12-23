@@ -1,13 +1,18 @@
-import React from 'react'
-import './cta.css'
+import React from 'react';
+import './cta.css';
+
 const CTA = () => {
   return (
-    <div className='cta'>
-      <p className='para'>Request Early Access to Get Started</p>
-      <h1 className='cta-heading'>Register today & start exploring the endless possiblities.</h1>
-      <button className='btton'>Get Strarted</button>
-    </div>
-  )
-}
+    <section className="cta">
+      <div className="cta-content">
+        <p>Request Early Access to Get Started</p>
+        <h1>Register today & start exploring the endless possibilities.</h1>
+      </div>
+      <div className="cta-button">
+        <button type="button">Get Started</button>
+      </div>
+    </section>
+  );
+};
 
-export default CTA
+export default CTA;

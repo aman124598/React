@@ -1,5 +1,7 @@
-export {default as Article} from './article/Article'
-export {default as Brand} from './Brand/Brand'
-export {default as CTA} from './cta/CTA'
-export {default as Feature} from './feature/Feature'
-export {default as Navbar} from './navbar/Navbar'
+import Navbar from './navbar/Navbar';
+import Brand from './Brand/Brand';
+import CTA from './cta/CTA';
+import Feature from './feature/Feature';
+import Article from './article/Article';
+
+export { Navbar, Brand, CTA, Feature, Article };

@@ -1,6 +1,8 @@
-export {default as Blog} from './blog/Blog'
-export {default as Features} from './features/Features'
-export {default as Footer} from './footer/Footer'
-export {default as Header} from './header/Header'
-export {default as Possibility} from './possibility/Possibility'
-export {default as WhatGPT3} from './whatGPT3/WhatGPT3'
+import Header from './header/Header';
+import Blog from './blog/Blog';
+import Features from './features/Features';
+import Footer from './footer/Footer';
+import Possibility from './possibility/Possibility';
+import WhatGPT3 from './whatGPT3/WhatGPT3';
+
+export { Header, Blog, Features, Footer, Possibility, WhatGPT3 };

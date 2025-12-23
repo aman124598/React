@@ -1,0 +1,47 @@
+/* Feature Item Styles */
+.feature-item {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.feature-line {
+  width: 3px;
+  min-height: 100%;
+  background: var(--gradient-bar);
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.feature-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.feature-content h3 {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.feature-content p {
+  color: var(--color-text);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+  .feature-item {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .feature-line {
+    width: 40px;
+    height: 3px;
+    min-height: 3px;
+  }
+}

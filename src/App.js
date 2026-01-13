@@ -1,15 +1,15 @@
 import React from 'react';
 import './App.css';
 
-import { Navbar, Brand, CTA } from './components';
-import { Header, WhatGPT3, Features, Possibility, Blog, Footer } from './containers';
+import { Navbar, Brand, CTA, Hero3D } from './components';
+import { WhatGPT3, Features, Possibility, Blog, Footer } from './containers';
 
 function App() {
   return (
     <div className="App">
       <div className="gradient__bg">
         <Navbar />
-        <Header />
+        <Hero3D />
       </div>
       <Brand />
       <WhatGPT3 />
@@ -23,3 +23,4 @@ function App() {
 }
 
 export default App;
+

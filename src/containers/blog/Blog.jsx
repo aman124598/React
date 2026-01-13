@@ -12,28 +12,28 @@ const Blog = () => {
       id: 1,
       image: bg5,
       date: 'Sep 26, 2021',
-      title: 'GPT-3 and Open AI is the future. Let us explore how it is?',
+      title: 'GPT-6 and Open AI is the future. Let us explore how it is?',
       featured: false,
     },
     {
       id: 2,
       image: bg2,
       date: 'Sep 26, 2021',
-      title: 'GPT-3 and Open AI is the future. Let us explore how it is?',
+      title: 'GPT-6 and Open AI is the future. Let us explore how it is?',
       featured: false,
     },
     {
       id: 3,
       image: bg3,
       date: 'Sep 26, 2021',
-      title: 'GPT-3 and Open AI is the future. Let us explore how it is?',
+      title: 'GPT-6 and Open AI is the future. Let us explore how it is?',
       featured: false,
     },
     {
       id: 4,
       image: bg4,
       date: 'Sep 26, 2021',
-      title: 'GPT-3 and Open AI is the future. Let us explore how it is?',
+      title: 'GPT-6 and Open AI is the future. Let us explore how it is?',
       featured: false,
     },
   ];
@@ -55,7 +55,7 @@ const Blog = () => {
           <div className="blog-article-content">
             <span className="blog-article-date">Sep 26, 2021</span>
             <h2 className="blog-article-title">
-              GPT-3 and Open AI is the future. Let us explore how it is?
+              GPT-6 and Open AI is the future. Let us explore how it is?
             </h2>
             <span className="blog-article-link">Read Full Article</span>
           </div>

@@ -1,47 +1,118 @@
-/* WhatGPT3 Section */
+/* WhatGPT3 Section - Glassmorphic Design */
 .whatgpt3 {
-  padding: 6rem 4rem;
+  padding: 8rem 4rem;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 4rem;
+  gap: 5rem;
+  position: relative;
 }
 
+/* Glassmorphic decorative elements */
+.whatgpt3::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(174, 103, 250, 0.08) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.whatgpt3::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(244, 152, 103, 0.06) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+/* Left Feature Section */
 .whatgpt3-feature {
   flex: 1;
   max-width: 400px;
+  position: relative;
+  z-index: 1;
 }
 
 .whatgpt3-feature h1 {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
   line-height: 1.2;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
+/* Glassmorphic Feature Item */
 .whatgpt3-feature-item {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
+  padding: 1.75rem;
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Glassmorphism */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 4px 24px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.whatgpt3-feature-item:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(174, 103, 250, 0.12) 0%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  border-color: rgba(174, 103, 250, 0.25);
+  transform: translateY(-5px);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.15),
+    0 0 30px rgba(174, 103, 250, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
 .whatgpt3-feature-item .gradient-bar {
-  width: 40px;
-  height: 3px;
+  width: 50px;
+  height: 4px;
   background: var(--gradient-bar);
   border-radius: 2px;
+  box-shadow: 0 0 15px rgba(174, 103, 250, 0.4);
 }
 
 .whatgpt3-feature-item h3 {
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 600;
 }
 
 .whatgpt3-feature-item p {
   color: var(--color-text);
   font-size: 0.95rem;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 /* Heading Section */
@@ -50,6 +121,8 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .whatgpt3-heading h1 {
@@ -59,27 +132,47 @@
   max-width: 500px;
 }
 
+/* Glassmorphic Link */
 .whatgpt3-heading p {
-  color: var(--color-subtext);
+  color: #fff;
   font-size: 1rem;
   cursor: pointer;
-  transition: all var(--transition-normal);
+  transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
+  width: fit-content;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  
+  /* Glassmorphism */
+  background: linear-gradient(
+    135deg,
+    rgba(174, 103, 250, 0.15) 0%,
+    rgba(244, 152, 103, 0.1) 100%
+  );
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(174, 103, 250, 0.2);
 }
 
 .whatgpt3-heading p:hover {
-  gap: 0.75rem;
+  gap: 1rem;
+  background: linear-gradient(
+    135deg,
+    rgba(174, 103, 250, 0.25) 0%,
+    rgba(244, 152, 103, 0.2) 100%
+  );
+  box-shadow: 0 0 30px rgba(174, 103, 250, 0.2);
 }
 
 .whatgpt3-heading p::after {
   content: '→';
-  transition: transform var(--transition-normal);
+  transition: transform 0.3s ease;
 }
 
 .whatgpt3-heading p:hover::after {
-  transform: translateX(3px);
+  transform: translateX(5px);
 }
 
 /* Features Container */
@@ -87,54 +180,95 @@
   flex: 1.5;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
 }
 
+/* Glassmorphic Container Items */
 .whatgpt3-container-item {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  padding: 1.5rem;
-  background: linear-gradient(145deg, rgba(4, 44, 84, 0.4) 0%, rgba(4, 12, 24, 0.6) 100%);
-  border-radius: var(--radius-md);
-  border: 1px solid rgba(174, 103, 250, 0.1);
-  transition: all var(--transition-normal);
+  gap: 1rem;
+  padding: 2rem;
+  border-radius: 20px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  
+  /* Glassmorphism */
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.07) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 60px rgba(174, 103, 250, 0.02);
+}
+
+.whatgpt3-container-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  transition: left 0.6s ease;
 }
 
 .whatgpt3-container-item:hover {
   border-color: rgba(174, 103, 250, 0.3);
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px);
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.2),
+    0 0 40px rgba(174, 103, 250, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.whatgpt3-container-item:hover::before {
+  left: 100%;
 }
 
 .whatgpt3-container-item .gradient-bar {
-  width: 40px;
-  height: 3px;
+  width: 50px;
+  height: 4px;
   background: var(--gradient-bar);
   border-radius: 2px;
+  box-shadow: 0 0 15px rgba(174, 103, 250, 0.4);
 }
 
 .whatgpt3-container-item h3 {
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 600;
 }
 
 .whatgpt3-container-item p {
   color: var(--color-text);
   font-size: 0.9rem;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 /* Responsive Styles */
 @media screen and (max-width: 1200px) {
   .whatgpt3 {
-    padding: 4rem 3rem;
+    padding: 5rem 3rem;
     gap: 3rem;
   }
   
   .whatgpt3-container {
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 }
 
@@ -158,6 +292,8 @@
   
   .whatgpt3-heading {
     max-width: 100%;
+    align-items: center;
+    text-align: center;
   }
   
   .whatgpt3-container {
@@ -182,6 +318,10 @@
   .whatgpt3-container {
     grid-template-columns: 1fr;
   }
+  
+  .whatgpt3-container-item {
+    padding: 1.5rem;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -190,6 +330,11 @@
   }
   
   .whatgpt3-container-item {
+    padding: 1.25rem;
+    border-radius: 16px;
+  }
+  
+  .whatgpt3-feature-item {
     padding: 1.25rem;
   }
 }

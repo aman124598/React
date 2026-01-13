@@ -1,36 +1,134 @@
-/* Possibility Section */
+/* Possibility Section - Glassmorphic Design */
 .possibility {
-  padding: 6rem 4rem;
+  padding: 8rem 4rem;
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 4rem;
+  gap: 5rem;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Image Side */
+/* Decorative background orbs */
+.possibility::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(113, 229, 255, 0.08) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.possibility::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(174, 103, 250, 0.08) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+/* Glassmorphic Image Container */
 .possibility-image {
   flex: 1;
   position: relative;
+  z-index: 1;
 }
 
 .possibility-image img {
   width: 100%;
   max-width: 550px;
   height: auto;
-  border-radius: var(--radius-lg);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  border-radius: 24px;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Glassmorphic image frame */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 25px 80px rgba(0, 0, 0, 0.4),
+    0 0 60px rgba(174, 103, 250, 0.1),
+    inset 0 0 60px rgba(0, 0, 0, 0.2);
 }
 
+.possibility-image:hover img {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 
+    0 35px 100px rgba(0, 0, 0, 0.5),
+    0 0 80px rgba(174, 103, 250, 0.15);
+}
+
+/* Glassmorphic border decoration */
 .possibility-image::before {
   content: '';
   position: absolute;
-  top: -20px;
-  left: -20px;
-  right: 20px;
-  bottom: 20px;
-  border: 2px solid rgba(174, 103, 250, 0.3);
-  border-radius: var(--radius-lg);
+  top: -15px;
+  left: -15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 28px;
   z-index: -1;
+  
+  /* Glassmorphic border */
+  background: linear-gradient(
+    135deg,
+    rgba(174, 103, 250, 0.2) 0%,
+    rgba(113, 229, 255, 0.15) 50%,
+    rgba(244, 152, 103, 0.1) 100%
+  );
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(174, 103, 250, 0.2);
+  opacity: 0.7;
+  transition: all 0.4s ease;
+}
+
+.possibility-image:hover::before {
+  opacity: 1;
+  transform: translate(-5px, -5px);
+}
+
+/* Glassmorphic floating element */
+.possibility-image::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  
+  /* Glassmorphism */
+  background: linear-gradient(
+    135deg,
+    rgba(113, 229, 255, 0.3) 0%,
+    rgba(174, 103, 250, 0.2) 100%
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(113, 229, 255, 0.2);
+  animation: floatElement 6s ease-in-out infinite;
+}
+
+@keyframes floatElement {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(5deg); }
 }
 
 /* Content Side */
@@ -39,14 +137,31 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  position: relative;
+  z-index: 1;
 }
 
+/* Glassmorphic Tag */
 .possibility-content .tag {
-  color: #71E5FF;
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 0.9rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 3px;
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  width: fit-content;
+  
+  /* Glassmorphism */
+  background: linear-gradient(
+    135deg,
+    rgba(113, 229, 255, 0.2) 0%,
+    rgba(174, 103, 250, 0.15) 100%
+  );
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(113, 229, 255, 0.3);
+  color: #71E5FF;
+  box-shadow: 0 0 20px rgba(113, 229, 255, 0.2);
 }
 
 .possibility-content h1 {
@@ -57,35 +172,64 @@
 
 .possibility-content p {
   color: var(--color-text);
-  font-size: 1rem;
+  font-size: 1.05rem;
   line-height: 1.8;
   max-width: 500px;
 }
 
+/* Glassmorphic CTA Button */
 .possibility-content .cta-text {
-  color: var(--color-subtext);
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: all var(--transition-normal);
+  transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: 50px;
+  width: fit-content;
+  
+  /* Glassmorphism */
+  background: linear-gradient(
+    135deg,
+    rgba(244, 152, 103, 0.2) 0%,
+    rgba(174, 103, 250, 0.15) 100%
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(244, 152, 103, 0.3);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(244, 152, 103, 0.15);
 }
 
 .possibility-content .cta-text:hover {
-  gap: 0.75rem;
+  gap: 1rem;
+  background: linear-gradient(
+    135deg,
+    rgba(244, 152, 103, 0.35) 0%,
+    rgba(174, 103, 250, 0.25) 100%
+  );
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 30px rgba(244, 152, 103, 0.25),
+    0 0 40px rgba(244, 152, 103, 0.1);
 }
 
 .possibility-content .cta-text::after {
   content: '→';
+  transition: transform 0.3s ease;
+}
+
+.possibility-content .cta-text:hover::after {
+  transform: translateX(5px);
 }
 
 /* Responsive Styles */
 @media screen and (max-width: 1200px) {
   .possibility {
-    padding: 4rem 3rem;
+    padding: 5rem 3rem;
     gap: 3rem;
   }
 }
@@ -110,6 +254,13 @@
     display: none;
   }
   
+  .possibility-image::after {
+    width: 70px;
+    height: 70px;
+    bottom: -20px;
+    right: calc(50% - 220px);
+  }
+  
   .possibility-content {
     text-align: center;
     align-items: center;
@@ -128,6 +279,11 @@
   
   .possibility-image img {
     max-width: 380px;
+    border-radius: 20px;
+  }
+  
+  .possibility-image::after {
+    display: none;
   }
 }
 
@@ -138,5 +294,12 @@
   
   .possibility-image img {
     max-width: 100%;
+    border-radius: 16px;
+  }
+  
+  .possibility-content .tag {
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+    letter-spacing: 2px;
   }
 }

@@ -28,12 +28,12 @@ const Navbar = () => {
     <nav className={`navbar ${isScrolled ? "glass" : ""}`}>
       <div className="navbar-container">
         <a href="#home" className="navbar-logo">
-          <img src={logo} alt="GPT-3 Logo" />
+          <img src={logo} alt="GPT-6 Logo" />
         </a>
 
         <div className="navbar-links">
           <a href="#home">Home</a>
-          <a href="#whatGPT3">What is GPT?</a>
+          <a href="#whatGPT3">What is GPT-6?</a>
           <a href="#features">Features</a>
           <a href="#possibility">Open AI</a>
           <a href="#blog">Case Studies</a>
@@ -60,7 +60,7 @@ const Navbar = () => {
           Home
         </a>
         <a href="#whatGPT3" onClick={closeMenu}>
-          What is GPT?
+          What is GPT-6?
         </a>
         <a href="#features" onClick={closeMenu}>
           Features

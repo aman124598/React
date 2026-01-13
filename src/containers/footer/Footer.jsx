@@ -17,7 +17,7 @@ const Footer = () => {
 
       <div className="footer-links">
         <div className="footer-links-logo">
-          <img src={gpt3Logo} alt="GPT-3 Logo" />
+          <img src={gpt3Logo} alt="GPT-6 Logo" />
           <p>
             Crechterwoord K12 182 DK Alknjkcb, All Rights Reserved
           </p>
@@ -61,7 +61,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-copyright">
-        <p>© 2024 GPT-3. All rights reserved.</p>
+        <p>© 2024 GPT-6. All rights reserved.</p>
       </div>
     </footer>
   );

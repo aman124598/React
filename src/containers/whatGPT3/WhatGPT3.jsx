@@ -20,10 +20,10 @@ const WhatGPT3 = () => {
   return (
     <section className="whatgpt3" id="whatGPT3">
       <div className="whatgpt3-feature">
-        <h1 className="gradient__text">What is GPT-3</h1>
+        <h1 className="gradient__text">What is GPT-6</h1>
         <div className="whatgpt3-feature-item">
           <div className="gradient-bar" />
-          <h3>What is GPT-3?</h3>
+          <h3>What is GPT-6?</h3>
           <p>
             We so opinion friends me message as delight. Whole front do of plate heard oh ought. His defective nor convinced residence own.
           </p>

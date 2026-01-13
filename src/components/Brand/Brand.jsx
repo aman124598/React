@@ -1,5 +1,5 @@
 import React from 'react';
-import './brand.css';
+import './Brand.css';
 import br1 from '../../assets/atlassian.png';
 import br2 from '../../assets/dropbox.png';
 import br3 from '../../assets/google.png';
